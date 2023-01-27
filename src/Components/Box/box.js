@@ -10,8 +10,10 @@ export default function Box({ space, content }) {
       onClick={() => {
         setSpace(space);
         turnHandler();
+        console.log(content);
       }}
     >
+      fdgdgdg
       {content}
     </div>
   );

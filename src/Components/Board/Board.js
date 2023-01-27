@@ -9,7 +9,7 @@ export default function Board() {
     <>
       <div className="game-container">
         {boxes.map((box) => {
-          <Box key={box.space} space={box.space} content={box.content} />;
+          return <Box key={box.space} space={box.space} content={box.content} />;
         })}
       </div>
     </>
