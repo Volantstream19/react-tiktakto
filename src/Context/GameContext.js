@@ -4,7 +4,7 @@ const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
   const [currentPlayer, setCurrentPlayer] = useState();
-  // const [active, setActive] = useState(false);
+  const [active, setActive] = useState(true);
   const [turn, setTurn] = useState('X');
   const [message, setMessage] = useState('');
   const [boxes, setBoxes] = useState([
@@ -54,6 +54,14 @@ const UserProvider = ({ children }) => {
     });
   };
 
+  function checkSpace(content) {
+    let className = '';
+    if (content !== '') {
+      className = 'not-clickable';
+    }
+    return className;
+  }
+
   function turnHandler() {
     if (turn === 'X') {
       setTurn('O');
@@ -61,6 +69,16 @@ const UserProvider = ({ children }) => {
       setTurn('X');
     }
   }
+
+  const gameRestart = () => {
+    setBoxes((prevBox) => {
+      return prevBox.map((box) => {
+        return { ...box, content: '' };
+      });
+    });
+    setActive(true);
+    setTurn('X');
+  };
 
   return (
     <UserContext.Provider
@@ -75,6 +93,9 @@ const UserProvider = ({ children }) => {
         turn,
         setTurn,
         turnHandler,
+        checkSpace,
+        active,
+        gameRestart,
       }}
     >
       {children}

@@ -3,17 +3,17 @@ import { UserContext } from '../../Context/GameContext.js';
 import './box.css';
 
 export default function Box({ space, content }) {
-  const { setSpace, turnHandler } = useContext(UserContext);
+  const { setSpace, turnHandler, checkSpace } = useContext(UserContext);
+  const className = checkSpace(content);
   return (
     <div
-      className="box"
+      className={`${className} single-space`}
       onClick={() => {
         setSpace(space);
         turnHandler();
-        console.log(content);
+        checkSpace(content);
       }}
     >
-      fdgdgdg
       {content}
     </div>
   );

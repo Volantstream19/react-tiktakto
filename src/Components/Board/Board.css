@@ -1,7 +1,7 @@
 .game-container {
   height: 50vh;
   width: 35vw;
-  background-color: lightblue;
+  background-color: rgb(221, 207, 176);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   border-radius: 15px;

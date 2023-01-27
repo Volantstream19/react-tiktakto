@@ -3,6 +3,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
+  border: 1px;
   margin: 10px;
+}
+
+.not-clickable {
+  pointer-events: none;
 }

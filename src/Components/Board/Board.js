@@ -6,12 +6,10 @@ import './Board.css';
 export default function Board() {
   const { boxes } = useContext(UserContext);
   return (
-    <>
-      <div className="game-container">
-        {boxes.map((box) => {
-          return <Box key={box.space} space={box.space} content={box.content} />;
-        })}
-      </div>
-    </>
+    <div className="game-container">
+      {boxes.map((box) => {
+        return <Box key={box.space} space={box.space} content={box.content} />;
+      })}
+    </div>
   );
 }
