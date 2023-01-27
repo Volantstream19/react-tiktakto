@@ -8,7 +8,7 @@ export default function Board() {
   return (
     <>
       <h1>{winnerMessage}</h1>
-      <h3>{turn}s Turn</h3>
+      <h2>{turn}s Turn</h2>
       <div className="game-container">
         {boxes.map((box) => {
           return <Box key={box.space} space={box.space} content={box.content} />;

@@ -6,6 +6,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: rgb(130, 101, 101);
-  background: linear-gradient(90deg, rgba(130, 101, 101, 1) 0%, rgba(136, 124, 148, 1) 99%);
+  background: rgb(46, 57, 133);
+  background: linear-gradient(90deg, rgba(46, 57, 133, 1) 0%, rgba(73, 70, 70, 1) 100%);
 }
