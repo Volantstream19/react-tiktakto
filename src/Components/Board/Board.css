@@ -1,0 +1,8 @@
+.board {
+  height: 70vh;
+  width: 45vw;
+  background-color: rgb(64, 0, 182);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-radius: 15px;
+}
