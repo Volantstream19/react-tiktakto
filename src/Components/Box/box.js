@@ -3,7 +3,7 @@ import { UserContext } from '../../Context/GameContext.js';
 import './box.css';
 
 export default function Box({ space, content }) {
-  const { setSpace, turnHandler, checkSpace } = useContext(UserContext);
+  const { setSpace, turnHandler, checkSpace, checkGame } = useContext(UserContext);
   const className = checkSpace(content);
   return (
     <div
@@ -12,6 +12,7 @@ export default function Box({ space, content }) {
         setSpace(space);
         turnHandler();
         checkSpace(content);
+        checkGame();
       }}
     >
       {content}

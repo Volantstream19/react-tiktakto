@@ -3,17 +3,19 @@ import { UserContext } from '../../Context/GameContext.js';
 import './GameRestart.css';
 
 export default function GameRestart({ space }) {
-  const { gameRestart } = useContext(UserContext);
+  const { gameRestart, active } = useContext(UserContext);
   return (
     <>
-      <button
-        className="button"
-        onClick={() => {
-          gameRestart(space);
-        }}
-      >
-        Reset game
-      </button>
+      {!active && (
+        <button
+          className="button"
+          onClick={() => {
+            gameRestart(space);
+          }}
+        >
+          Reset game
+        </button>
+      )}
     </>
   );
 }
