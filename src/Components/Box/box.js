@@ -3,11 +3,12 @@ import { UserContext } from '../../Context/GameContext.js';
 import './box.css';
 
 export default function Box({ space, content }) {
-  const { setSpace, turnHandler, checkSpace, checkGame } = useContext(UserContext);
+  const { setSpace, turnHandler, checkSpace, checkGame, endGame } = useContext(UserContext);
   const className = checkSpace(content);
+  const gameEnder = endGame(content);
   return (
     <div
-      className={`${className} single-space`}
+      className={`${className} ${gameEnder} single-space`}
       onClick={() => {
         setSpace(space);
         turnHandler();

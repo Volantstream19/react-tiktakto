@@ -66,6 +66,14 @@ const UserProvider = ({ children }) => {
     return className;
   }
 
+  function endGame() {
+    let className = '';
+    if (!active) {
+      className = 'game-over';
+    }
+    return className;
+  }
+
   function turnHandler() {
     if (turn === 'X') {
       setTurn('O');
@@ -82,6 +90,44 @@ const UserProvider = ({ children }) => {
     });
     setWinner('');
     setWinnerMessage('');
+    setBoxes([
+      {
+        space: 1,
+        content: '',
+      },
+      {
+        space: 2,
+        content: '',
+      },
+      {
+        space: 3,
+        content: '',
+      },
+      {
+        space: 4,
+        content: '',
+      },
+      {
+        space: 5,
+        content: '',
+      },
+      {
+        space: 6,
+        content: '',
+      },
+      {
+        space: 7,
+        content: '',
+      },
+      {
+        space: 8,
+        content: '',
+      },
+      {
+        space: 9,
+        content: '',
+      },
+    ]);
     setActive(true);
     setTurn('X');
   };
@@ -183,6 +229,7 @@ const UserProvider = ({ children }) => {
         winnerMessage,
         checkGame,
         setWinnerMessage,
+        endGame,
       }}
     >
       {children}
