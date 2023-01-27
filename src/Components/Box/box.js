@@ -3,15 +3,15 @@ import { UserContext } from '../../Context/GameContext.js';
 import './box.css';
 
 export default function Box({ space, content }) {
-  const { setSpace } = useContext(UserContext);
+  const { setSpace, turnHandler } = useContext(UserContext);
   return (
     <div
       className="box"
       onClick={() => {
         setSpace(space);
+        turnHandler();
       }}
     >
-      I am a Box THis is my Box
       {content}
     </div>
   );

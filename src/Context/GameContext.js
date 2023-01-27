@@ -3,8 +3,9 @@ import { createContext, useState } from 'react';
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
-  const [currentPlayer, setCurrentPlayer] = useState('X');
-  //   const [active, setActive] = useState(false);
+  const [currentPlayer, setCurrentPlayer] = useState();
+  // const [active, setActive] = useState(false);
+  const [turn, setTurn] = useState('X');
   const [message, setMessage] = useState('');
   const [boxes, setBoxes] = useState([
     {
@@ -48,14 +49,33 @@ const UserProvider = ({ children }) => {
   const setSpace = (space) => {
     setBoxes((prevBox) => {
       return prevBox.map((box) => {
-        return box.space === space ? { ...boxes, content: 'x' } : box;
+        return box.space === space ? { ...boxes, content: turn } : box;
       });
     });
   };
 
+  function turnHandler() {
+    if (turn === 'X') {
+      setTurn('O');
+    } else {
+      setTurn('X');
+    }
+  }
+
   return (
     <UserContext.Provider
-      value={{ currentPlayer, setCurrentPlayer, message, setMessage, boxes, setBoxes, setSpace }}
+      value={{
+        currentPlayer,
+        setCurrentPlayer,
+        message,
+        setMessage,
+        boxes,
+        setBoxes,
+        setSpace,
+        turn,
+        setTurn,
+        turnHandler,
+      }}
     >
       {children}
     </UserContext.Provider>
