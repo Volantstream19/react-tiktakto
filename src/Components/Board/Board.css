@@ -1,0 +1,10 @@
+.game-container {
+  height: 50vh;
+  width: 25vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  -webkit-box-shadow: 10px 6px 12px -4px rgba(0, 0, 0, 0.79);
+  -moz-box-shadow: 10px 6px 12px -4px rgba(0, 0, 0, 0.79);
+  box-shadow: 10px 6px 12px -4px rgba(0, 0, 0, 0.79);
+}

@@ -1,0 +1,23 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+  border-radius: 6px;
+  background-color: rgb(224, 223, 223);
+  font-size: xx-large;
+  transition: background 0.3s;
+}
+
+.box:hover {
+  background: rgb(167, 167, 167);
+}
+
+.not-clickable {
+  pointer-events: none;
+}
+
+.game-over {
+  pointer-events: none;
+}
