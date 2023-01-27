@@ -174,10 +174,10 @@ const UserProvider = ({ children }) => {
     if (boxes[3].content === 'O' && boxes[4].content === 'O' && boxes[5].content === 'O') {
       setWinner('O');
     }
-    if (boxes[1].content === 'X' && boxes[4].content === 'X' && boxes[7].content === 'O') {
+    if (boxes[1].content === 'O' && boxes[4].content === 'O' && boxes[7].content === 'O') {
       setWinner('O');
     }
-    if (boxes[0].content === 'X' && boxes[3].content === 'X' && boxes[6].content === 'O') {
+    if (boxes[0].content === 'O' && boxes[3].content === 'O' && boxes[6].content === 'O') {
       setWinner('O');
     }
     if (boxes[6].content === 'O' && boxes[7].content === 'O' && boxes[8].content === 'O') {

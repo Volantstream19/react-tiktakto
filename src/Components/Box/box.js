@@ -8,7 +8,7 @@ export default function Box({ space, content }) {
   const gameEnder = endGame(content);
   return (
     <div
-      className={`${className} ${gameEnder} single-space`}
+      className={`${className} ${gameEnder} box`}
       onClick={() => {
         setSpace(space);
         turnHandler();
